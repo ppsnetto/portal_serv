@@ -33,7 +33,7 @@ class _sistemasState extends State<sistemas> {
               children: [
                 Positioned.fill(
                     child: Image.asset(
-                  "assets/images/dark.jpeg",
+                  "assets/images/banner_app.png",
                   fit: BoxFit.cover,
                 )),
                 Container(
@@ -54,6 +54,34 @@ class _sistemasState extends State<sistemas> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
+                      Column(
+                        children: [
+                          Card(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                const ListTile(
+                                  leading: const Icon(Icons.computer),
+                                  title: const Text('ERP - Etherium'),
+                                  subtitle: const Text(
+                                      'Sistema de gestão integrado de gestão pública'),
+                                ),
+                                ButtonTheme(
+                                  // make buttons use the appropriate styles for cards
+                                  child: new ButtonBar(
+                                    children: <Widget>[
+                                      new FlatButton(
+                                        child: const Text('Acessar >>'),
+                                        onPressed: erpeth,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                       Column(
                         children: [
                           Card(
@@ -302,7 +330,7 @@ class _sistemasState extends State<sistemas> {
                                         onPressed: Suporte,
                                       ),
                                       new FlatButton(
-                                        child: const Text('LISTAR'),
+                                        child: const Text('Manual'),
                                         onPressed: manualsuporte,
                                       ),
                                     ],
@@ -360,7 +388,8 @@ class _sistemasState extends State<sistemas> {
   }
 
   protocolo() async {
-    const url = 'http://sistemas.santaluzia.mg.gov.br:8080/protocolo/';
+    const url =
+        'https://santaluzia.meumunicipio.digital/apex/pmstl/f?p=1382:LOGIN_DESKTOP::::::';
 
     await launch(url);
   }
@@ -390,4 +419,10 @@ class _sistemasState extends State<sistemas> {
 
     await launch(url);
   }
+}
+
+erpeth() async {
+  const url = 'https://santaluzia.meumunicipio.digital/';
+
+  await launch(url);
 }

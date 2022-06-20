@@ -1,7 +1,10 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:portal_serv/paginas/home.dart';
 import 'package:portal_serv/paginas/TreeView.dart';
 import 'package:portal_serv/paginas/sistemas.dart';
+import 'package:portal_serv/paginas/consultas.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -55,7 +58,7 @@ ThemeData _darkTheme = ThemeData(
 bool _light = false;
 
 class _DarkLightThemeState extends State<DarkLightTheme> {
-  var pageTitle = ['Home', 'Sistemas', 'TreeView', 'Calendário'];
+  var pageTitle = ['Home', 'Sistemas', 'TreeView','Consultas'];
 
   var indexPage = 0;
 
@@ -69,7 +72,7 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
       ],
       supportedLocales: [Locale("pt", "BR")],
       theme: _light ? _lightTheme : _darkTheme,
-      title: 'Material',
+      title: 'Portal do Servidor - PMSL',
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.blueGrey[900],
@@ -85,6 +88,8 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
             Row(
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Switch(
                       value: _light,
@@ -117,6 +122,8 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
                   home(),
                   sistemas(),
                   TreeView(),
+                  consultas(),
+                  
                 ],
               ),
             ),
@@ -137,11 +144,13 @@ class _DarkLightThemeState extends State<DarkLightTheme> {
                       icon: Icon(Icons.home), label: Text('Home')),
                   NavigationRailDestination(
                       icon: Icon(Icons.airplay_sharp), label: Text('Sistemas')),
-                  NavigationRailDestination(
-                      icon: Icon(Icons.account_tree_outlined),
-                      label: Text('TreeVie')),
                   // NavigationRailDestination(
-                  //     icon: Icon(Icons.date_range), label: Text('Calendário')),
+                  //     icon: Icon(Icons.account_tree_outlined),
+                  //     label: Text('TreeVie')),
+            /*       NavigationRailDestination(
+                      icon: Icon(Icons.account_tree_outlined),
+                      label: Text('Consultas')),
+               */
                 ],
               ),
             ]),

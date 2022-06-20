@@ -53,6 +53,7 @@ dependencies:
   hasura_connect: ^3.0.6
   graphql_flutter: ^5.0.0
   flutter_modular: ^4.1.1
+  mysql1: ^0.19.2
 
 dev_dependencies:
   flutter_test:
@@ -78,7 +79,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+      - assets/images/banner_1.png
+      - assets/images/banner_app.png
       - assets/images/dark.jpeg
+      - assets/images/banner_p.png
       - assets/images/black.png
       - assets/images/light.png
   # An image asset can refer to one or more resolution-specific "variants", see

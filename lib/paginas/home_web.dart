@@ -15,6 +15,9 @@ const _email = 'https://webmail.santaluzia.mg.gov.br/SOGo/so/';
 const _suporte = 'https://glpi.santaluzia.mg.gov.br/front/central.php';
 const _contra =
     'https://portaldofuncionario.santaluzia.mg.gov.br/portalfuncionario/login.xhtml';
+const _desblo = 'https://quarentena.santaluzia.mg.gov.br:8006/quarantine';
+const _cartilha =
+    'https://www.santaluzia.mg.gov.br//v2/wp-content/uploads/2022/06/Cartilha_Usuario_PMSL.pdf';
 
 mixin hom implements StatelessWidget {
   @override
@@ -57,7 +60,7 @@ class _homewebState extends State<homeweb> {
                 children: [
                   Positioned.fill(
                       child: Image.asset(
-                    "assets/images/dark.jpeg",
+                    "assets/images/banner_app.png",
                     fit: BoxFit.cover,
                   )),
                   Container(
@@ -106,6 +109,40 @@ class _homewebState extends State<homeweb> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: <Widget>[
+                                        Flexible(
+                                          child: FlatButton(
+                                            textColor: Colors.blueGrey,
+                                            height: 100.0,
+                                            color: Colors.transparent,
+                                            highlightColor: Colors.purple,
+                                            hoverColor: Colors.amber[600],
+                                            focusColor: Colors.amber,
+                                            splashColor: Colors.grey,
+                                            disabledColor: Colors.amber[400],
+                                            onPressed: _cartilhaURL,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Icon(
+                                                    Icons
+                                                        .real_estate_agent_sharp,
+                                                    size: 90,
+                                                    color: Colors.white60,
+                                                  ),
+                                                ),
+                                                Text('Cartilha',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        color: Colors.white60,
+                                                        fontSize: 15.0))
+                                              ],
+                                            ),
+                                          ),
+                                        ),
                                         Flexible(
                                           child: FlatButton(
                                             textColor: Colors.blueGrey,
@@ -216,7 +253,7 @@ class _homewebState extends State<homeweb> {
                                             focusColor: Colors.amber,
                                             splashColor: Colors.grey,
                                             disabledColor: Colors.amber[400],
-                                            onPressed: _chequelaunchURL,
+                                            onPressed: __contralaunchURL,
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -232,6 +269,38 @@ class _homewebState extends State<homeweb> {
                                                   ),
                                                 ),
                                                 Text('Holerite',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        color: Colors.white60,
+                                                        fontSize: 15.0))
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        Flexible(
+                                          child: FlatButton(
+                                            textColor: Colors.blueGrey,
+                                            height: 100.0,
+                                            highlightColor: Colors.purple,
+                                            hoverColor: Colors.amber[600],
+                                            focusColor: Colors.amber,
+                                            splashColor: Colors.grey,
+                                            disabledColor: Colors.amber[400],
+                                            onPressed: _desblolaunchURL,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: Icon(
+                                                    Icons.mail_outlined,
+                                                    size: 90,
+                                                    color: Colors.white60,
+                                                  ),
+                                                ),
+                                                Text('Desbloqueio de E-mail',
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                         color: Colors.white60,
@@ -277,6 +346,7 @@ class _homewebState extends State<homeweb> {
                       //     child:
                       Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       Flexible(
                         child: SizedBox(
@@ -381,7 +451,7 @@ class _homewebState extends State<homeweb> {
       ? await launch(_ramais)
       : throw 'Site não está disponível $_ramais';
 
-  void _chequelaunchURL() async => await canLaunch(_contra)
+  void __contralaunchURL() async => await canLaunch(_contra)
       ? await launch(_contra)
       : throw 'Site não está disponível $_contra';
 
@@ -391,5 +461,13 @@ class _homewebState extends State<homeweb> {
 
   void _emaillaunchURL() async => await canLaunch(_email)
       ? await launch(_email)
+      : throw 'Site não está disponível $_email';
+
+  void _desblolaunchURL() async => await canLaunch(_desblo)
+      ? await launch(_desblo)
+      : throw 'Site não está disponível $_email';
+
+  void _cartilhaURL() async => await canLaunch(_cartilha)
+      ? await launch(_cartilha)
       : throw 'Site não está disponível $_email';
 }

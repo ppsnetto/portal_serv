@@ -40,7 +40,7 @@ class _homephoneState extends State<homephone> {
                       children: [
                         Positioned.fill(
                             child: Image.asset(
-                          "assets/images/dark.jpeg",
+                          "assets/images/banner_1.png",
                           fit: BoxFit.cover,
                         )),
                         Container(
@@ -356,6 +356,7 @@ class _homephoneState extends State<homephone> {
                         padding: const EdgeInsets.all(1.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
                           children: [
                             Flexible(
                               child: SizedBox(
