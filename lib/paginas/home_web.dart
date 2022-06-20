@@ -315,13 +315,13 @@ class _homewebState extends State<homeweb> {
                             ),
                           ],
                         ),
-                        Flexible(
-                          child: Text(
-                              "__________________________________________________________________________________________________\n",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.blueGrey[100], fontSize: 10.0)),
-                        ),
+                        // Flexible(
+                        //   child: Text(
+                        //       "__________________________________________________________________________________________________\n",
+                        //       textAlign: TextAlign.center,
+                        //       style: TextStyle(
+                        //           color: Colors.blueGrey[100], fontSize: 10.0)),
+                        // ),
                       ],
                     ),
                   ),
